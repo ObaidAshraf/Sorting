@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+void main()
+{
+	int num[100];
+	int a,b,n,i,swap;
+	printf("\nEnter Number of digits: ");
+	scanf("%d", &n);
+	printf("\nEnter digits: ");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d", &num[i]);
+	}
+
+	for(a=0;a<n-1;a++)
+	{
+		for(b=0;b<n-a-1;b++)
+		{
+			if(num[b]>num[b+1])
+			{
+				swap = num[b];
+				num[b] = num[b+1];
+				num[b+1] = swap;
+			}
+		}
+	}
+
+	for(i=0;i<n;i++)
+	{
+		printf("%d,", num[i]);
+	}
+	getch();
+}
